@@ -1,0 +1,7 @@
+<div>
+    <% @users.each do |user| %>
+      <%= user.name%>
+      <%= user.user_type%>
+      <%= link_to "Delete", user_path(user), method: :delete %>
+    <% end %>
+</div>
