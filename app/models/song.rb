@@ -6,4 +6,7 @@ class Song < ApplicationRecord
   scope :top, ->(top){ limit (top) }
   scope :sort_col, ->(col, direction) { order("#{col} #{direction}") }
 
+  def self.search(title, genre, artist)
+    title(title).genre(genre).artist(artist)
+  end
 end
