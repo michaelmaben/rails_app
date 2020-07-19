@@ -7,15 +7,12 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    puts "params:: #{params[:article]}"
-    puts "attr: #{article_attributes}"
     @article = Article.new(article_attributes)
     @article.save
   end
 
 private
   def article_attributes
-    puts "called attr"
-    params.require(:article).permit(:title, {versions_attributes: [:version_number] })
+    params.require(:article).permit(:title, versions_attributes: [:version_number])
   end
 end
