@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
+  respond_to :json
   def index
+    puts "calling index::"
     @users = User.all
+    respond_to do |format|
+    format.html
+    format.json{
+      render :json => @user.to_json
+    }
+  end
   end
 
   def create

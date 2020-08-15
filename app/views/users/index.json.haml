@@ -1,0 +1,6 @@
+- puts "json:: #{@users.inspect}"
+- @users.each do |user|
+  =user[:name]
+  - puts "User:: #{user.inspect}"
+  =user[:user_type]
+  =link_to "Delete", user_path(user), method: :delete
