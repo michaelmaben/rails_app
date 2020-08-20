@@ -1,0 +1,2 @@
+class ThirdPerson < ApplicationRecord
+end
